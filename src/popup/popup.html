@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STK – Send to Kindle</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <header>
+    <h1>STK <span>Send to Kindle</span></h1>
+    <a id="options-link" href="#" title="Options">⚙</a>
+  </header>
+
+  <!-- Mode Selection -->
+  <fieldset id="mode-fieldset">
+    <legend>Capture mode</legend>
+    <label>
+      <input type="radio" name="mode" value="auto" id="mode-auto" checked />
+      Auto (Readability)
+    </label>
+    <label>
+      <input type="radio" name="mode" value="manual" id="mode-manual" />
+      Manual (select area)
+    </label>
+  </fieldset>
+
+  <!-- Capture button -->
+  <button id="capture-btn" class="primary">Capture Page</button>
+
+  <!-- Status area -->
+  <p id="status" class="status" aria-live="polite"></p>
+
+  <!-- Metadata form (hidden until capture) -->
+  <section id="metadata-form" hidden>
+    <div class="field">
+      <label for="title-input">Title</label>
+      <input type="text" id="title-input" placeholder="Article title" />
+    </div>
+    <div class="field">
+      <label for="author-input">Author</label>
+      <input type="text" id="author-input" placeholder="Author name" />
+    </div>
+    <div class="field">
+      <label for="lang-select">Language</label>
+      <select id="lang-select">
+        <option value="en">English</option>
+        <option value="zh">Chinese</option>
+        <option value="de">German</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+      </select>
+    </div>
+
+    <!-- Font settings (collapsible) -->
+    <details id="font-details">
+      <summary>Font &amp; layout settings</summary>
+      <div class="field">
+        <label for="font-family">Font family</label>
+        <select id="font-family">
+          <option value="Georgia">Georgia</option>
+          <option value="Bookerly">Bookerly</option>
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Times New Roman">Times New Roman</option>
+        </select>
+      </div>
+      <div class="field row">
+        <label for="font-size">Size (px)</label>
+        <input type="number" id="font-size" min="10" max="24" step="1" value="16" />
+      </div>
+      <div class="field row">
+        <label for="line-height">Line height</label>
+        <input type="number" id="line-height" min="1.0" max="2.5" step="0.1" value="1.6" />
+      </div>
+      <div class="field row">
+        <label for="indent">Indent (em)</label>
+        <input type="number" id="indent" min="0" max="3" step="0.5" value="1.5" />
+      </div>
+    </details>
+
+    <!-- Kindle model -->
+    <div class="field">
+      <label for="kindle-device">Kindle model</label>
+      <select id="kindle-device">
+        <!-- populated by popup.ts -->
+      </select>
+    </div>
+
+    <!-- Action buttons -->
+    <div id="action-btns">
+      <button id="download-btn" class="primary">Download .epub</button>
+      <button id="send-btn">Send to Kindle</button>
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

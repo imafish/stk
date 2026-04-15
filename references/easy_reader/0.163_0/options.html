@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <title>EasyReader Options</title>
+      <meta charset="utf-8" />
+      <meta name="author" content="Anton Johansson" />
+      <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+      <style type="text/css" media="screen">
+         body {
+         padding: 0;
+         margin: 0;
+         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+         font-size: 12px;
+         line-height: 20px;
+         }
+
+         #bgDiv {
+         position: relative;
+         padding: 0;
+         width: 97.875%;
+         margin: 0 1.064%;
+         overflow: hidden;
+         }
+
+         #settings, #readerDiv {
+         position: relative;
+         
+         width: 41%;
+         margin: 0 1.04%;
+         overflow: hidden;
+         float: left;
+
+         padding: 0 3% 3% 3%;
+         left: auto;
+         z-index: 99999;
+         background-color: #fff;
+         border-bottom-right-radius: 10px;
+         border-bottom-left-radius: 10px;
+         }
+         
+         h1,h2,h3,h4 {
+         font-family: Helvetica, Arial, sans-serif;
+         }
+
+         #settings h1 {
+         font-size: 36px;
+         line-height: 50px;
+         margin-top: 50px;
+         margin-bottom: 25px;
+         border: 0;
+         }
+         
+         #settings h2 {
+         font-size: 25px;
+         line-height: 50px;
+         margin-top: 25px;
+         margin-bottom: 0px;
+         border: 0;
+         }
+
+         input {
+         width: 100%;
+         display: block;
+         margin-bottom: 1em;
+         font-size: 16px;
+         }
+
+         label:before {
+         content: "✎ ";
+         font-weight: normal;
+         margin-left: -1em;
+         font-size: 1.5em;
+         }
+
+         label {
+         font-weight: bold;
+         font-size: 12px;
+         }
+
+         #by {
+         margin-top: 44px;
+         text-align: center;
+         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+         font-weight: lighter;
+         }
+
+         #by a {
+         text-decoration: none;
+         }
+      </style>
+      <script src="options.js"></script>
+   </head>
+   <body lang="en" xml:lang="en">
+      <div id="bgDiv">
+         <div id="aj-easy-reader-overlay"> </div>
+         <div id="settings">
+            <h1>EasyReader</h1>
+             <h2>CSS Style</h2>
+            <div id="opt"></div>
+            <p id="by">Extension by <a href="http://antonj.se">http://antonj.se</a></p>
+         </div>
+         <div id="readerDiv">
+            <h1>Preview: Header 1</h1>
+            <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi.</p>
+            <blockquote>
+               Lorem ipsum dolor sit amet, consectetur adipiscing
+               elit. Vivamus magna. Cras in mi at felis aliquet
+               congue. Ut a est eget ligula molestie gravida.
+               Curabitur massa. Donec eleifend, libero at sagittis
+               mollis, tellus est malesuada tellus, at luctus turpis
+               elit sit amet quam.
+            </blockquote>
+            <p>Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+            <h2>Header Level 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+            <h3>Header Level 3</h3>
+            <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+            <h4>Header Level 4</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+            <h5>Header Level 5</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+         </div>
+      </div>
+   </body>
+</html>

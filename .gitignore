@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output
+/dist/
+*.tsbuildinfo
+
+# Packaged artifacts
+*.zip
+*.crx
+
+# Test output
+coverage/
+.playwright/
+.playwright-data/
+playwright-report/
+test-results/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# Temporary files
+*.tmp
+*.swp

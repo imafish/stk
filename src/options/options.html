@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STK – Options</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      max-width: 680px;
+      margin: 20px auto;
+      padding: 0 16px;
+      color: #222;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    fieldset {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+      padding: 0 6px;
+    }
+
+    .field {
+      margin-bottom: 12px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .field input[type="text"],
+    .field input[type="password"],
+    .field select {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    .field.row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .field.row label {
+      margin-bottom: 0;
+    }
+
+    .field.row input[type="number"] {
+      width: 80px;
+      padding: 6px 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .help {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .help a {
+      color: #4a90d9;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+
+    th {
+      text-align: left;
+      font-size: 12px;
+      color: #666;
+      padding: 4px 6px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td {
+      padding: 5px 6px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    td:last-child {
+      width: 60px;
+      text-align: center;
+    }
+
+    .add-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .add-row input {
+      flex: 1;
+      padding: 5px 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    button {
+      padding: 6px 14px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 13px;
+      background: #f5f5f5;
+    }
+
+    button.primary {
+      background: #4a90d9;
+      color: #fff;
+      border-color: #3a7bc8;
+    }
+
+    button.danger {
+      color: #e05;
+      border-color: #e05;
+      background: transparent;
+    }
+
+    #save-btn {
+      margin-top: 4px;
+    }
+
+    #status {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      min-height: 18px;
+    }
+
+    #status.ok {
+      color: #1a7a1a;
+    }
+
+    #status.err {
+      color: #e05;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>STK – Options</h1>
+
+  <!-- Kindle Delivery -->
+  <fieldset>
+    <legend>Kindle Delivery</legend>
+    <div class="field">
+      <label for="kindle-email">Kindle email address</label>
+      <input type="text" id="kindle-email" placeholder="yourname@kindle.com" />
+    </div>
+    <div class="field">
+      <label for="emailjs-key">EmailJS public key</label>
+      <input type="password" id="emailjs-key" placeholder="Paste your EmailJS public key" />
+      <p class="help">
+        1. Create a free account at <a href="https://emailjs.com" target="_blank">emailjs.com</a><br />
+        2. Add an email service and create a template with: <code>{{to_email}}</code>, <code>{{epub_filename}}</code>,
+        <code>{{epub_base64}}</code><br />
+        3. Paste your <strong>Public Key</strong> above.<br />
+        4. Add your Kindle email to Amazon's <a href="https://www.amazon.com/hz/mycd/myx#/home/settings/pdoc"
+          target="_blank">Approved Personal Document Email List</a>.
+      </p>
+    </div>
+  </fieldset>
+
+  <!-- Domain List -->
+  <fieldset>
+    <legend>Domain List (auto mode selector overrides)</legend>
+    <table id="domain-table">
+      <thead>
+        <tr>
+          <th>URL pattern</th>
+          <th>CSS selector</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="domain-tbody"></tbody>
+    </table>
+    <div class="add-row">
+      <input type="text" id="new-pattern" placeholder="*.example.com" />
+      <input type="text" id="new-selector" placeholder="#content" style="max-width:160px" />
+      <button id="add-domain-btn">Add</button>
+    </div>
+    <div style="margin-top:8px">
+      <button id="reset-domains">Reset to defaults</button>
+    </div>
+  </fieldset>
+
+  <!-- Default Font Settings -->
+  <fieldset>
+    <legend>Default font &amp; layout</legend>
+    <div class="field">
+      <label for="opt-font-family">Font family</label>
+      <select id="opt-font-family">
+        <option value="Georgia">Georgia</option>
+        <option value="Bookerly">Bookerly</option>
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Times New Roman">Times New Roman</option>
+      </select>
+    </div>
+    <div class="field row">
+      <label for="opt-font-size">Size (px)</label>
+      <input type="number" id="opt-font-size" min="10" max="24" step="1" value="16" />
+    </div>
+    <div class="field row">
+      <label for="opt-line-height">Line height</label>
+      <input type="number" id="opt-line-height" min="1.0" max="2.5" step="0.1" value="1.6" />
+    </div>
+    <div class="field row">
+      <label for="opt-indent">Indent (em)</label>
+      <input type="number" id="opt-indent" min="0" max="3" step="0.5" value="1.5" />
+    </div>
+  </fieldset>
+
+  <button id="save-btn" class="primary">Save settings</button>
+  <span id="status"></span>
+
+  <script src="options.js"></script>
+</body>
+
+</html>

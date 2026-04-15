@@ -1,0 +1,50 @@
+{
+   "action": {
+      "default_icon": "icon-48.png",
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "background.bundle.js"
+   },
+   "commands": {
+      "preview": {
+         "description": "Preview and customize web page.",
+         "suggested_key": {
+            "default": "Ctrl+Shift+P",
+            "mac": "Command+Shift+P"
+         }
+      },
+      "send-to-kindle": {
+         "description": "Send current article to Kindle.",
+         "suggested_key": {
+            "default": "Ctrl+Shift+K",
+            "mac": "Command+Shift+K"
+         }
+      },
+      "send-to-kindle-alt": {
+         "description": "Send current article to Kindle.",
+         "suggested_key": {
+            "default": "Ctrl+Shift+S",
+            "mac": "Command+Shift+S"
+         }
+      }
+   },
+   "description": "Send web articles, Twitter threads, RSS and newsletters to Kindle",
+   "host_permissions": [ "*://ktool.io/*" ],
+   "icons": {
+      "128": "icon-128.png",
+      "16": "icon-16.png",
+      "512": "icon-512.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuHRa18h/a5lKQ248SqL45DxvIZhO0HHOgPX/fPSK7YcwZ2abtoqBgLCgGhrNqhUper5xaAnSqCVyuZpOdHPSv+uGNSf7wi3ladMdHUBO6w4Rr/Q34xSGKLVVP9zy8J7+CiBK1RC2Ts3/vKJNUDdryfQ3UIMazzfhJcr0jgXYXlPeRdJD51bdbmNxjoisAt9Vu615GCslCN+qyaw9pESO8M8SwTKISZSZRl9oVBIsupDRAMgURc9/VnMoq4jXodCA6O/gDwO3KzaFLQPiSUQSjN/W8LBZG82dMPfgJIf1EvXzjChSpoFtomdpXImFvhYu51HJDfKOm2UxZk+wbWfmWwIDAQAB",
+   "manifest_version": 3,
+   "minimum_chrome_version": "92",
+   "name": "Send web articles to Kindle by KTool",
+   "permissions": [ "storage", "contextMenus", "cookies", "scripting", "activeTab" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.9.0",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "import-from-amazon.js", "icon-128.png", "icon-48.png", "icon-16.png", "*.eot", "*.svg", "*.ttf", "*.woff", "*.woff2", "*.css" ]
+   } ]
+}

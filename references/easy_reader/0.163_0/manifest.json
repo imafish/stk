@@ -1,0 +1,28 @@
+{
+   "action": {
+      "default_icon": "img/icon.png",
+      "default_title": "EasyReader"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "commands": {
+      "_execute_action": {
+         "suggested_key": {
+            "default": "Ctrl+1"
+         }
+      }
+   },
+   "description": "EasyReader can customize and improve the readability of long web articles",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "img/128-square.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDV0RUwDXNQ6W9j+wSxJq9M1F0ZZmeGt8FKukxrIPDwZ/MK7QvsRZKho/XHTWlKwJF8psI0lsthpotvxP6r7aSZDUnV556J4Vu44L+6JrLIJCocSr1TTGyxBiimqL4rHUH9KroFq40OS24upycPbA/Z0WXaBYsAEiMJYoLa14CaEwIDAQAB",
+   "manifest_version": 3,
+   "name": "EasyReader",
+   "options_page": "options.html",
+   "permissions": [ "activeTab", "scripting", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.163"
+}

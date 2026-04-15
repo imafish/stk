@@ -1,0 +1,220 @@
+:root {
+  --grey-90-a10: rgba(12, 12, 13, 0.1);
+  --grey-90-a20: rgba(12, 12, 13, 0.2);
+  --grey-30: #d7d7db;
+  --light-theme-background: #fff;
+  --light-theme-foreground: rgb(21, 20, 26);
+  --dark-theme-background: rgb(28, 27, 34);
+  --dark-theme-foreground: rgb(251, 251, 254);
+  --body-padding: 64px;
+  --font-size: 12;
+  --content-width: 22em;
+  --line-height: 1.6em;
+
+  --toolbar-border: rgba(12, 12, 13, 0.2);
+}
+
+html {
+  background-color: #fff !important;
+  font-family: 'Bookerly', sans-serif !important;
+  line-height: 1.6 !important;
+  max-width: 780px !important;
+  padding: 2rem !important;
+  margin: auto !important;
+  font-size: 20px !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #3B3B3B !important;
+    color: #fff !important;
+  }
+  h1, h2, strong {
+    color: #fff !important;
+  }
+  hr {
+    background: #ccc !important;
+    background-image: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  filter: grayscale(100%);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+img.emoji {
+  display: inline;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+p {
+  margin-bottom: 0.5em !important;
+  text-indent: 0 !important;
+}
+
+blockquote {
+  margin-bottom: 0.5em !important;
+}
+
+h1 {
+  margin-bottom: 1em !important;
+  margin-top: 1em !important;
+}
+
+h1 {
+  font-size: 1.6em;
+  line-height: 1.25em;
+}
+
+h2 {
+  font-size: 1.2em;
+  line-height: 1.51em;
+}
+
+h3 {
+  font-size: 1em;
+  line-height: 1.66em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em !important;
+}
+
+hr {
+  border: 0 !important;
+  height: 1px !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background: #333 !important;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc) !important;
+}
+
+/* Twitter  */
+.twitter-author-avatar {
+  width: 48px !important;
+  margin: 0;
+}
+
+.twitter-quoted-tweet {
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin: 0.5em !important;
+  border: 1px solid #000;
+}
+
+.twitter-quoted-tweet .twitter-author-avatar {
+  width: 36px !important;
+}
+
+.twitter-quoted-tweet .twitter-author-row {
+  font-size: 0.8rem !important;
+}
+
+.twitter-embeded-url {
+  border: 1px solid #ccc;
+  margin-top: 0.5em !important;
+}
+
+.twitter-embeded-url span,
+.twitter-embeded-url b,
+.twitter-embeded-url small
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* preview */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --toolbar-border: rgba(249, 249, 250, 0.2);
+  }
+}
+
+.toolbar-container {
+  position: fixed;
+  top: 4em;
+  left: calc((50% - 390px) - 120px);
+}
+
+.toolbar {
+  padding: 16px;
+  border: 1px solid var(--toolbar-border);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(12, 12, 13, 0.1);
+  width: 32px; /* basic width, without padding/border */
+  font-family: Helvetica, Arial, sans-serif;
+  list-style: none;
+  user-select: none;
+}
+
+.toolbar-button {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin: 4px 0;
+  background-color: transparent;
+  background-size: 16px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.toolbar-button:hover {
+  background-color: #eee;
+}
+
+.hover-label {
+  /* position: relative; */
+
+  top: 2px;
+  position: absolute;
+
+  inset-inline-start: 36px;
+  line-height: 16px;
+  white-space: pre; /* make sure we don't wrap */
+  background-color: #eee;
+  color: #333;
+  padding: 4px 8px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.toolbar-button:not(.dropdown-toggle):hover > .hover-label,
+.toolbar-button:not(.dropdown-toggle):focus-visible > .hover-label,
+/* Show the hover tooltip for dropdown buttons unless its dropdown is open. */
+:not(.open) > li > .dropdown-toggle:hover > .hover-label,
+:not(.open) > li > .dropdown-toggle:focus-visible > .hover-label {
+  visibility: visible;
+}
